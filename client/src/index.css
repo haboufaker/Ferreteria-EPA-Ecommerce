@@ -12,3 +12,8 @@ body {
 .app {
   margin: auto;
 }
+
+.logo {
+  max-width: 135px;
+  max-height: 43px;
+}

@@ -46,7 +46,7 @@ const ShoppingList = (props) => {
 
     <Box width="80%" margin="80px auto">
       <Typography variant="h3" textAlign="center">
-        Our Featured <b>Products</b>
+        Nuestros productos <b>Destacados</b>
       </Typography>
       <Tabs
         textColor="primary"
@@ -62,10 +62,10 @@ const ShoppingList = (props) => {
           },
         }}
       >
-        <Tab label="ALL" value="all" />
-        <Tab label="NEW ARRIVALS" value="newArrivals" />
-        <Tab label="BEST SELLERS" value="bestSellers" />
-        <Tab label="TOP RATED" value="topRated" />
+        <Tab label="TODOS" value="all" />
+        <Tab label="NOVEDADES" value="newArrivals" />
+        <Tab label="LOS MÁS VENDIDOS" value="bestSellers" />
+        <Tab label="MEJOR CALIFICADO" value="topRated" />
       </Tabs>
       <Box
         margin="0 auto"

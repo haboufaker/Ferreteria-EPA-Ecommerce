@@ -24,19 +24,16 @@ function Footer() {
                         mb="30px"
                         color={shades.secondary[500]}
                     >
-                        FERRETERIA EPA
+                        <img src="https://ve.epaenlinea.com/static/version1668698844/frontend/EPA/EpaThemeVE/es_VE/images/epa_logo.png" alt="Logo" class='logo' />
                     </Typography>
                     <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat
+                    ¡Haga de su hogar su mejor lugar!
                     </div>
                 </Box>
 
                 <Box>
                     <Typography variant="h4" fontWeight="bold" mb="30px">
-                        About Us
+                        Nosotros
                     </Typography>
                     <Typography mb="30px">Únete al equipo</Typography>
                     <Typography mb="30px">Tiendas</Typography>
@@ -46,17 +43,17 @@ function Footer() {
 
                 <Box>
                     <Typography variant="h4" fontWeight="bold" mb="30px">
-                        Customer Care
+                        Ayuda y contacto
                     </Typography>
-                    <Typography mb="30px">Help Center</Typography>
-                    <Typography mb="30px">Track Your Order</Typography>
-                    <Typography mb="30px">Corporate & Bulk Purchasing</Typography>
-                    <Typography mb="30px">Returns & Refunds</Typography>
+                    <Typography mb="30px">Preguntas frecuentes</Typography>
+                    <Typography mb="30px">Acción Social</Typography>
+                    <Typography mb="30px">Venta a empresas</Typography>
+                    <Typography mb="30px">Medios de pago</Typography>
                 </Box>
 
                 <Box width="clamp(20%, 25%, 30%)">
                     <Typography variant="h4" fontWeight="bold" mb="30px">
-                        Contact Us
+                        Contáctenos
                     </Typography>
                     <Typography mb="30px">
                     Av. Uslar cruce con calle Michelena, Valencia, Edo. Carabobo

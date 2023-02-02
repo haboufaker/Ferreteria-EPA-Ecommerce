@@ -74,7 +74,7 @@ const Item = ({ item, width }) => {
                         }}
                         sx={{ backgroundColor: shades.primary[300], color: "white" }}
                         >
-                        Add to Cart
+                        Agregar al carrito
                         </Button>
                     </Box>
                 </Box>

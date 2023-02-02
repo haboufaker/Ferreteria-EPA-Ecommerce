@@ -68,7 +68,7 @@ const ItemDetailContainer = () => {
                 <Box flex="1 1 50%" mb="40px">
                     <Box display="flex" justifyContent="space-between">
                         <Box>Home/Item</Box>
-                        <Box>Prev Next</Box>
+                        <Box>Anterior Siguiente</Box>
                     </Box>
 
                     <Box m="65px 0 25px 0">
@@ -105,15 +105,15 @@ const ItemDetailContainer = () => {
                             }}
                             onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
                         >
-                            ADD TO CART
+                            AGREGAR AL CARRITO
                         </Button>
                     </Box>
                     <Box>
                         <Box m="20px 0 5px 0" display="flex">
                             <FavoriteBorderOutlinedIcon />
-                            <Typography sx={{ ml: "5px" }}>ADD TO WISHLIST</Typography>
+                            <Typography sx={{ ml: "5px" }}>AÑADIR A LA LISTA DE DESEOS</Typography>
                         </Box>
-                        <Typography>CATEGORIES: {item?.attributes?.category}</Typography>
+                        <Typography>CATEGORIAS: {item?.attributes?.category}</Typography>
                     </Box>
                 </Box>
             </Box>
@@ -121,21 +121,21 @@ const ItemDetailContainer = () => {
             {/* INFORMATION */}
             <Box m="20px 0">
                 <Tabs value={value} onChange={handleChange}>
-                    <Tab label="DESCRIPTION" value="description" />
-                    <Tab label="REVIEWS" value="reviews" />
+                    <Tab label="DESCRIPCION" value="description" />
+                    <Tab label="RESEÑAS" value="reviews" />
                 </Tabs>
             </Box>
             <Box display="flex" flexWrap="wrap" gap="15px">
                 {value === "description" && (
                 <div>{item?.attributes?.longDescription}</div>
                 )}
-                {value === "reviews" && <div>reviews</div>}
+                {value === "reviews" && <div>reseñas</div>}
             </Box>
 
             {/* RELATED ITEMS */}
             <Box mt="50px" width="100%">
                 <Typography variant="h3" fontWeight="bold">
-                    Related Products
+                    Productos relacionados
                 </Typography>
                 <Box
                     mt="20px"

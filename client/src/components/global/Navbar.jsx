@@ -40,7 +40,7 @@ const Navbar = () => {
             sx={{ '&:hover': { cursor:'pointer'}}}
             color= {shades.secondary[500]}
             >
-                FERRETERIA EPA
+                <img src="https://ve.epaenlinea.com/static/version1668698844/frontend/EPA/EpaThemeVE/es_VE/images/epa_logo.png" alt="Logo" class='logo' />
             </Box>
             <Box
                 display='flex'
