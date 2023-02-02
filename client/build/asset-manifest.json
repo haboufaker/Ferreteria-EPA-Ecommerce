@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e211777f.css",
+    "main.js": "/static/js/main.7f2b3172.js",
+    "static/media/ve_paguecomoquiera_sliderprincipal_1170x500px_9ago.2021.png": "/static/media/ve_paguecomoquiera_sliderprincipal_1170x500px_9ago.2021.713bde8d7f986797ee4a.png",
+    "static/media/1170x500_rrss-conceptual-organizaci_n.jpg": "/static/media/1170x500_rrss-conceptual-organizaci_n.34f9e930f8b115946fa4.jpg",
+    "static/media/slider_1170x500.png": "/static/media/slider_1170x500.f4bd66e03db2e1e61f2e.png",
+    "static/media/ve_epaenlinea_tealca_abr.jpg": "/static/media/ve_epaenlinea_tealca_abr.abaf5589992a46ccd9a5.jpg",
+    "index.html": "/index.html",
+    "main.e211777f.css.map": "/static/css/main.e211777f.css.map",
+    "main.7f2b3172.js.map": "/static/js/main.7f2b3172.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e211777f.css",
+    "static/js/main.7f2b3172.js"
+  ]
+}
