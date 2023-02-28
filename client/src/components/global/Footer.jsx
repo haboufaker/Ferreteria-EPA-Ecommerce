@@ -24,7 +24,7 @@ function Footer() {
                         mb="30px"
                         color={shades.secondary[500]}
                     >
-                        <img src="https://ve.epaenlinea.com/static/version1668698844/frontend/EPA/EpaThemeVE/es_VE/images/epa_logo.png" alt="Logo" class='logo' />
+                        <img src="https://ve.epaenlinea.com/static/version1668698844/frontend/EPA/EpaThemeVE/es_VE/images/epa_logo.png" alt="Logo" className='logo' />
                     </Typography>
                     <div>
                     ¡Haga de su hogar su mejor lugar!

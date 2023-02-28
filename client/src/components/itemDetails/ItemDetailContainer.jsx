@@ -10,6 +10,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { shades } from "../../theme";
 import { addToCart } from "../../state";
 import { useDispatch } from "react-redux";
+import { getFirestore, doc, getDoc, getDocs, collection} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const dispatch = useDispatch();
@@ -23,31 +24,33 @@ const ItemDetailContainer = () => {
         setValue(newValue);
     };
 
-    async function getItem() {
-        const item = await fetch(
-        `http://localhost:1337/api/items/${itemId}?populate=image`,
-        {
-            method: "GET",
-        }
-        );
-        const itemJson = await item.json();
-        setItem(itemJson.data);
-    }
+    const getProduct = () => {
+        const db = getFirestore();
+        const querySnapshot = doc(db, "Item", itemId);
+    
+        getDoc(querySnapshot).then((querySnapshot) => {
+            if (querySnapshot.exists()) {
+                setItem({id: parseInt(querySnapshot.id), attributes: querySnapshot.data()});
+            }
+            console.log({id: parseInt(querySnapshot.id), attributes: querySnapshot.data()});
+        })
+      }
 
-    async function getItems() {
-        const items = await fetch(
-        `http://localhost:1337/api/items?populate=image`,
-        {
-            method: "GET",
-        }
-        );
-        const itemsJson = await items.json();
-        setItems(itemsJson.data);
-    }
+    const getProducts = () => {
+        const db = getFirestore();
+        const querySnapshot = collection(db, "Item");
+    
+        getDocs(querySnapshot).then((response) => {
+          const data = response.docs.map((item)=> {
+            return {id: parseInt(item.id), attributes: item.data()};
+          });
+            setItems(data);
+        }).catch(error => console.log(error))
+      }
 
     useEffect(() => {
-        getItem();
-        getItems();
+        getProduct();
+        getProducts();
     }, [itemId]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
@@ -59,7 +62,7 @@ const ItemDetailContainer = () => {
                         alt={item?.name}
                         width="100%"
                         height="100%"
-                        src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                        src={item?.attributes?.imageurl}
                         style={{ objectFit: "contain" }}
                     />
                 </Box>

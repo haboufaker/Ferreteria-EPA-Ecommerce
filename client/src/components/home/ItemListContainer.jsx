@@ -1,4 +1,4 @@
-import React, { useEffect, useState, props } from "react";
+import React, { useEffect, useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -7,6 +7,7 @@ import { Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useDispatch, useSelector } from "react-redux";
 import { setItems } from "../../state";
+import { getFirestore, getDocs, collection} from "firebase/firestore";
 
 const ShoppingList = (props) => {
 
@@ -19,17 +20,22 @@ const ShoppingList = (props) => {
     setValue(newValue);
   };
 
-  async function getItems() {
-    const items = await fetch(
-      "http://localhost:1337/api/items?populate=image",
-      { method: "GET" }
-    );
-    const itemsJson = await items.json();
-    dispatch(setItems(itemsJson.data));
+
+
+  const getProducts = () => {
+    const db = getFirestore();
+    const querySnapshot = collection(db, "Item");
+
+    getDocs(querySnapshot).then((response) => {
+      const data = response.docs.map((item)=> {
+        return {id: parseInt(item.id), attributes: item.data()};
+      });
+        dispatch(setItems(data));
+    }).catch(error => console.log(error))
   }
 
   useEffect(() => {
-    getItems();
+    getProducts();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const topRatedItems = items.filter(
